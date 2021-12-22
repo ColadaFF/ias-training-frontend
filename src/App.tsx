@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import ApplicationBar from "./components/app-bar";
 import CssBaseline from "@mui/material/CssBaseline";
-import Clock from "./components/clock";
+import PeopleTable from "./components/people/table";
+// import Clock from "./components/clock";
 
 function App() {
   return (
@@ -9,9 +10,11 @@ function App() {
       <CssBaseline />
       <ApplicationBar />
 
-      <Clock timezone="America/Bogota" />
+      {/*  <Clock timezone="America/Bogota" />
       <Clock timezone="Africa/Abidjan" />
-      <Clock timezone="Asia/Dubai" />
+      <Clock timezone="Asia/Dubai" /> */}
+
+      <PeopleTable />
     </React.Fragment>
   );
 }

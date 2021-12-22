@@ -43,11 +43,11 @@ function Clock(props: Props) {
       const timezone = data?.timezone || "";
       const zonedDate = utcToZonedTime(newDate, timezone);
       setDateTime(formatISO(zonedDate));
-
-      return () => {
-        clearInterval(intervalId);
-      };
     }, 1000);
+
+    return () => {
+      clearInterval(intervalId);
+    };
   }, [data]);
 
   if (loading) {
