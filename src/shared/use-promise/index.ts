@@ -18,7 +18,8 @@ function usePromise<T>(
       .then((jsonResponse) => setData(jsonResponse))
       .catch((error) => setError(error))
       .finally(() => setLoading(false));
-  }, [promiseFactory]);
+    // eslint-disable-next-line
+  }, []);
 
   return {
     isLoading,

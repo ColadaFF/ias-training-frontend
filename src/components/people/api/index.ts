@@ -18,9 +18,31 @@ async function getPersonById(personId: string): Promise<Person> {
   return await response.json();
 }
 
+type CreatePersonRequest = {
+  name: string;
+  birthday: Date | null;
+};
+type CreatePersonResponse = {
+  person: Person;
+};
+async function createPerson(
+  request: CreatePersonRequest
+): Promise<CreatePersonResponse> {
+  const response = await fetch(BASE_URL, {
+    method: "POST",
+    body: JSON.stringify(request),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  return await response.json();
+}
+
 const client = {
   listPersons,
   getPersonById,
+  createPerson,
 };
 
 export default client;

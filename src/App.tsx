@@ -2,6 +2,7 @@ import React from "react";
 import ApplicationBar from "./components/app-bar";
 import CssBaseline from "@mui/material/CssBaseline";
 import PeopleTable from "./components/people/table";
+import PersonForm from "./components/people/form";
 // import Clock from "./components/clock";
 
 function App() {
@@ -13,7 +14,9 @@ function App() {
       {/*  <Clock timezone="America/Bogota" />
       <Clock timezone="Africa/Abidjan" />
       <Clock timezone="Asia/Dubai" /> */}
+      <PersonForm />
 
+      <br />
       <PeopleTable />
     </React.Fragment>
   );
