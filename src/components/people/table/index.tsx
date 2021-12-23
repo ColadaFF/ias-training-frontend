@@ -1,6 +1,8 @@
 import React from "react";
+import { Link as RouterLink } from "react-router-dom";
 import CircularProgress from "@mui/material/CircularProgress";
 import Table from "@mui/material/Table";
+import Link from "@mui/material/Link";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
@@ -14,7 +16,11 @@ import { Person } from "../types";
 function personToRow(person: Person) {
   return (
     <TableRow key={person.id}>
-      <TableCell>{person.id}</TableCell>
+      <TableCell>
+        <Link component={RouterLink} to={`${person.id}/details`}>
+          {person.id}
+        </Link>
+      </TableCell>
       <TableCell align="right">{person.name}</TableCell>
       <TableCell align="right">{person.birthday}</TableCell>
     </TableRow>

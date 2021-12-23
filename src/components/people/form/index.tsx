@@ -1,4 +1,5 @@
 import { Formik, FormikHelpers } from "formik";
+import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
@@ -26,6 +27,8 @@ const initialValues: FormValues = {
 };
 
 function PersonForm() {
+  const navigate = useNavigate();
+
   const handleSubmit = async (
     formValues: FormValues,
     helpers: FormikHelpers<FormValues>
@@ -35,6 +38,8 @@ function PersonForm() {
     helpers.resetForm({
       values: initialValues,
     });
+
+    navigate("/");
   };
 
   return (
